@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 변경</title>
+    <link href="css/08.css" rel="stylesheet"/>
+</head>
+<body>
+    <section class="cont01">
+        <div>
+            <img id = "bg_img" src="img/beach.jpg" alt="해변"/>
+            <div class="info">
+                <strong>2022.09.26 월요일</strong>
+                <h3>컨텐츠 제목 작성하기</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil unde neque reiciendis! Eum, similique esse magnam officia, beatae laudantium deserunt recusandae, quaerat explicabo magni sit minus eaque labore suscipit cum?</p>
+                
+                <button id="btn">
+                    이미지보기
+                    <span id="num_text">1</span>/3
+                </button>
+
+            </div><!-- info end -->
+        </div>
+
+    </section><!-- cont01 end -->
+
+    <script>
+
+        let btn = document.getElementById('btn');
+        let sectionImg = document.getElementById('bg_img');
+
+        let img1 = 'img/beach.jpg';
+        let img2 = 'img/food2.jpg';
+        let img3 = 'img/food4.jpg';
+        let imgList = [img1, img2, img3];
+        let i = 0;
+
+        let numText = document.getElementById('num_text');
+        let numList = [1,2,3];
+        let num = 0;
+
+
+        btn.onclick = function () {
+            i++;
+            num++;
+
+          
+            if (i == imgList.length) {
+                i = 0;
+                num = 0;
+            }
+            sectionImg.src = imgList[i];
+            numText.innerText = numList[num];
+        }
+        
+
+    </script>
+    
+</body>
+</html>
